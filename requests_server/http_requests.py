@@ -73,8 +73,4 @@ async def get_promocodes_by_title(title: str):
                     
             logging.warning('Админ успешно получил промокоды по данной категории')
     except Exception as e:
-        logging.error(f'Ошибка получения промокодов по категории: {e}')   
-                        
-                                  
-        
-                          
+        logging.error(f'Ошибка получения промокодов по категории: {e}')        
