@@ -1,14 +1,13 @@
-from pydantic import BaseModel, ConfigDict
-from pydantic_settings import BaseSettings
-from config import TOKEN, HTTP_SERVER
-
-class ServerConfig(BaseModel):
-    http_server: str = HTTP_SERVER
+from pydantic import Field
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class Settings(BaseSettings):
-    token: str = TOKEN
-    server: ServerConfig = ServerConfig()
+    token: str = Field(alias='TOKEN')
+    http_client: str = Field(alias='HTTP_CLIENT')
     
-    model_config = ConfigDict(extra='forbid')
+    model_config = SettingsConfigDict(
+        env_file='.env',
+        extra='forbid'
+    )
     
 settings = Settings()    

@@ -4,7 +4,7 @@ from core.settings import settings
 import logging
 
 http_client = AsyncClient()
-base_url = settings.server.http_server
+base_url = settings.http_client
 
 async def set_promocode(promocode: str, title: str):
     url = f'{base_url}/set_promocod'

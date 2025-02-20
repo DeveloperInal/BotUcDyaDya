@@ -6,7 +6,6 @@ from core.settings import settings
 import asyncio
 import logging
 
-
 bot = Bot(token=settings.token, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
 dp = Dispatcher()
 
